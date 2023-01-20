@@ -3,7 +3,7 @@
 
  	session_start() ?? null;
 
- 	$id = $_SESSION['id'];
+ 	$id = $_SESSION['id'] ?? null;
 	// $transaction_id = $_POST['id'];
 	// $status = $_POST['status'];
 

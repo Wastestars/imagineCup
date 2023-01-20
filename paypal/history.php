@@ -3,7 +3,7 @@ include "../DBController.php";
 
 session_start() ?? null;
 
-$id = $_SESSION['id'];
+$id = $_SESSION['id'] ?? null;
 
 $sql_select = "SELECT * FROM payments WHERE paid_by = '$id'";
 ?>
@@ -14,6 +14,18 @@ $sql_select = "SELECT * FROM payments WHERE paid_by = '$id'";
 		h3{
 			color:  green;
 			padding-top: 15px;
+		}
+		.home{
+			padding: 10px;
+			border-radius: 50px;
+			border: solid 1px white;
+			margin: 30px 10px 0px;
+			background-color: green;
+			color: white;
+		}
+		.home:hover{
+			background-color: #8AC800;
+			color: white;
 		}
 	</style>
 </head>
@@ -52,4 +64,7 @@ $sql_select = "SELECT * FROM payments WHERE paid_by = '$id'";
 			}
 		?>
 </table>
+<div class = "text-center">
+	<a href = "#"><button class = "btn home">Go to home</button></a>
+</div>
 </body>

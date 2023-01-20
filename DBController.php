@@ -32,7 +32,7 @@ function getData($sql)
   {
     $row[] = $rows;
   }
-  return $row;
+  return $row??null;
 }
 
 ?>

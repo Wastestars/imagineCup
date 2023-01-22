@@ -37,11 +37,11 @@
 					border-radius: 50px;
 					border: solid 1px white;
 					margin: 30px 10px 0px;
-					background-color: green;
+					background-color: #008374;
 					color: white;
 				}
 				.success button:hover{
-					background-color: grey;
+					background-color: green;
 					color: white;
 				}
 				span{
@@ -50,7 +50,7 @@
 				.fa-solid{
 					font-size: 150px;
 					margin-bottom: 20px;
-					color:  green;
+					color:  #008374;
 				}
 			</style>
 		</head>

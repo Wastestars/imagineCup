@@ -34,7 +34,7 @@ body {
 .title {
     font-size: 25px;
     text-align: center;
-    color: green;
+    color: #008374;
 }
 .inputContainer {
     position: relative;
@@ -73,7 +73,7 @@ body {
 }
 .btn{
     width: 30%;
-    background-color: forestgreen;
+    background-color: #008374;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -82,7 +82,7 @@ body {
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #8AC800;
+    background-color: green;
 }
 .input:focus + .label {
     top: -7px;
@@ -93,7 +93,7 @@ body {
     color: #8AC800;
 }
 .input:focus {
-    border: 2px solid #8AC800;
+    border: 2px solid #008374;
 }
 .input:not(:placeholder-shown)+ .label {
     top: -7px;

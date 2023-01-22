@@ -12,7 +12,7 @@ $sql_select = "SELECT * FROM payments WHERE paid_by = '$id'";
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 	<style>
 		h3{
-			color:  green;
+			color:  #008374;
 			padding-top: 15px;
 		}
 		.home{
@@ -20,11 +20,12 @@ $sql_select = "SELECT * FROM payments WHERE paid_by = '$id'";
 			border-radius: 50px;
 			border: solid 1px white;
 			margin: 30px 10px 0px;
-			background-color: green;
+			background-color: #008374;
 			color: white;
+			margin-bottom: 10px;
 		}
 		.home:hover{
-			background-color: #8AC800;
+			background-color: green;
 			color: white;
 		}
 	</style>

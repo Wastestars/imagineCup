@@ -19,11 +19,11 @@
 			border-radius: 50px;
 			border: solid 1px white;
 			margin: 30px 10px 0px;
-			background-color: green;
+			background-color: #008374;
 			color: white;
 		}
 		.cancelled button:hover{
-			background-color: #8AC800;
+			background-color: green;
 			color: white;
 		}
 	</style>

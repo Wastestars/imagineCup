@@ -30,12 +30,10 @@ if(isset($_POST['login']))
 	
 		if(password_verify($password, $dbpassword))
 		{
-			header("location: paypal/payments.php");
-			echo "<script>alert('Login successfull')</script";
+			header("location: schedulePickup.php");
 		}
 		else{
 			header("location: login.php");
-			echo "<script>alert('Invalid credentials')</script";
 		}
 		
 

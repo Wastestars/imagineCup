@@ -66,7 +66,7 @@ body {
     left: 15px;
     padding: 0 4px;
     background-color: white;
-    color: #DADCE0;
+    color: #008374;
     font-size: 16px;
     transition: 0.5s;
     z-index: 0;
@@ -90,7 +90,7 @@ body {
     z-index: 10;
     font-size: 14px;
     font-weight: 600;
-    color: #8AC800;
+    color: #008374;
 }
 .input:focus {
     border: 2px solid #008374;

@@ -83,7 +83,7 @@ button:hover{
     <th>Waste Product Name</th>
     <th>Waste Product Description</th>
     <th>Waste Product Image</th>
-    <th>Action</th>
+
   </tr>
   <?php
   while($row = mysqli_fetch_assoc($result)) {
@@ -97,11 +97,9 @@ button:hover{
       <?php
       echo"<td>";
       ?>
-    <a style="text-decoration:none;" href="editWaste.php?id=<?php echo $row['id']; ?>  " name="edit" class="button-2">EDIT</a>
-    <a href="delete.php?id=<?php echo $row['id']; ?>" name="deletion" class="button-2">DELETE</a>
     <?php
-    echo "</td>";
-    echo "</tr>";
+
+
 
   }
   ?>

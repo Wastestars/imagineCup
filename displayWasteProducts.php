@@ -43,13 +43,52 @@ $results=$conn->query($sql);
          <div style="margin-left:10rem;text-align:center;">
             <b><hr style="color:black;"></b>
             </div>
-              <button style="background-color:black;"><a style="text-decoration:none;color:white;text-align:right;" href="payment.php">Purchase</a></button>
+ <div id = "paypal-button"></div>
+
+            <script src="https://www.paypal.com/sdk/js?client-id=AcvwnX_kxulOFO9pjZk7bfrNGOChCFCerQLfeuQCY3zJNQ3wnAWqlPuhmtNMcQir6KI5u8JwXiiGQLM0&disable-funding=credit,card"></script>
+            <script>
+              paypal.Buttons({
+              style: {
+                color: 'blue',
+                shape:'pill',
+                label: 'pay'
+
+              },
+              createOrder: function(data, actions){
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: {
+                      value: "1"
+                    }
+                  }]
+                });
+              },
+              onApprove: function(data, actions){
+                return actions.order.capture().then(function(details){
+
+                    var id = details.id;
+                    var status = details.status;
+
+                    $.ajax({
+                        url: "DBController.php",
+                        type: "get",
+                        // data: {id: id, status:status},
+                        success: function(res){
+                            window.location.href = "paypal/success.php";
+                        }
+                    })
+                })
+              },
+              onCancel: function(data){
+                window.location.replace("paypal/onCancel.php")
+              }
+
+            }).render("#paypal-button");
+          </script>
+
+
 
     </div>
-
-
-
-
 <?php } ?>
 
   </tbody>

@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/54d120c2-8039-4657-a317-5d72957762e7/AppServices/subscriptions/54d120c2-8039-4657-a317-5d72957762e7/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/wastestarss",
+  "appService.deploySubpath": "."
+}

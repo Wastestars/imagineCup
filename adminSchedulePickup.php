@@ -9,12 +9,10 @@ if (isset($_POST["pickup"])) {
 
     if($conn->query($sql_insert)===TRUE){
         echo "Sucessfully inserted!";
-        header(location:"http://localhost/viewPickupTimes.php")
+        header(location:"http://localhost/viewPickupTimes.php");
     }else {
         "Error in inserting data".$conn->error;
     }
-
-
-    }
+}
 
 ?>

@@ -1,7 +1,7 @@
 <?php
     $results_per_page = 3;
     $sql='SELECT * FROM pickup';
-    $db = mysqli_connect("localhost","root","","allwaste");
+    $db = mysqli_connect("localhost","root","","wastestars");
     $result = mysqli_query($db, $sql);
 
     //$number_of_results = mysqli_num_rows($result);

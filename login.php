@@ -63,6 +63,8 @@
 </header><!-- End Header -->
 <!-- End Header -->
 
+</head>
+<body>
     <div class="loginform">
         <form action="processData.php" method="POST" enctype="multipart/form-data" class="form">
 

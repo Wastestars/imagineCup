@@ -13,8 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 130vh;
-
+    height: 80vh;
 }
 .form {
     background-color: white;

@@ -62,7 +62,7 @@
 </div>
 </header><!-- End Header -->
 <!-- -->
-    <div class="recyclableFrm">
+    <div class="recyclableFrm" style = "margin-top: 8%">
         <form action="processData.php" method="POST" enctype="multipart/form-data" class="form">
 
             <h1 class="title">Registration</h1>
@@ -98,8 +98,8 @@
             <br>
 
             <div class="button">
-                <input type="submit" name="register" class="btn" value="Sign Up">
-           <p>Already have an account? <a href="login.php">Login </a> </p>
+                <input type="submit" name="register" class="btn" value="Sign Up" style = "background-color: #008374; color: #fff">
+                <p>Already have an account? <a href="login.php">Login </a> </p>
               </div>
         </form>
     </div>

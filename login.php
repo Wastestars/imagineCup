@@ -65,7 +65,7 @@
 
 </head>
 <body>
-    <div class="loginform">
+    <div class="loginform" style ="margin-top: 10%">
         <form action="processData.php" method="POST" enctype="multipart/form-data" class="form">
 
             <h3 class="title">Please Login to Proceed</h3>
@@ -81,7 +81,7 @@
             </div>
             <br>
             <div class="button">
-                <input type="submit" name="login" class="btn" value="Sign In">
+                <input type="submit" name="login" class="btn" value="Sign In" style = "background-color: #008374; color: #fff">
                 <p>Do not have an account <a href="register.php">Register</a> </p>
             
               </div>

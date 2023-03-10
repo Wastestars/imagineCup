@@ -30,7 +30,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
- 
 </head>
 <body>
   
@@ -63,7 +62,7 @@
 </header><!-- End Header -->
 <!-- End Header -->
 
-  <div class="recyclableFrm">
+  <div class="recyclableFrm" style="height:80vh;">
       <form action="adminSchedulePickup.php" method="POST" enctype="multipart/form-data" class="form">
 
         <h1 class="title">Schedule Garbage Pickup</h1>
@@ -87,7 +86,7 @@
             <script>
               paypal.Buttons({
               style: {
-                color: 'blue',
+                color: 'black',
                 shape:'pill',
                 label: 'pay'
 
@@ -112,7 +111,7 @@
                         type: "get",
                         // data: {id: id, status:status},
                         success: function(res){
-                            window.location.href = "paypal/success.php";
+                          window.location.replace("paypal/success.php")
                         }
                     })
                 })

@@ -33,8 +33,8 @@
 		<image src = "cancelled.png"/>
 		<h4>Your payment has been cancelled</h4>
 		<div class = "text-center">
-			<button class = "btn home"> <a href="./">Go to home</a>  </button>
-			<a href = "payments.php"><button class = "btn pay">Try Again</button></a>
+			<a href="../"><button class = "btn home"> Go to home</button></a>
+			<a href = "../schedulePickup.php"><button class = "btn pay">Try Again</button></a>
 		</div>
 	</div>
 </body>

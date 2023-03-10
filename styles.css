@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&dirsplay=swap');
 
 
 body {
@@ -21,7 +21,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: 8% 0% 4%;
-
 }
 .form {
     background-color: white;

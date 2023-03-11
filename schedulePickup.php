@@ -42,16 +42,11 @@
     <h1>All Waste<span>.</span></h1>
   </a>
   <nav id="navbar" class="navbar">
-    <ul>
+   <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#team">Testimonies</a></li>
-
-      <li><a href="#portfolio">Waste Type</a></li>
-      <li><a href="login.php">Login</a></li>
-
-      <li><a href="#contact">Contact</a></li>
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#portfolio">Waste Type</a></li>
+        <li><a href="paypal/history">My Payments</a></li>
     </ul>
   </nav><!-- .navbar -->
 
@@ -80,51 +75,13 @@
         </div>
         <br>
 
-        <div id = "paypal-button"></div>
-
-            <script src="https://www.paypal.com/sdk/js?client-id=AcvwnX_kxulOFO9pjZk7bfrNGOChCFCerQLfeuQCY3zJNQ3wnAWqlPuhmtNMcQir6KI5u8JwXiiGQLM0&disable-funding=credit,card"></script>
-            <script>
-              paypal.Buttons({
-              style: {
-                color: 'black',
-                shape:'pill',
-                label: 'pay'
-
-              },
-              createOrder: function(data, actions){
-                return actions.order.create({
-                  purchase_units: [{
-                    amount: {
-                      value: "1"
-                    }
-                  }]
-                });
-              },
-              onApprove: function(data, actions){
-                return actions.order.capture().then(function(details){
-
-                    var id = details.id;
-                    var status = details.status;
-
-                    $.ajax({
-                        url: "DBController.php",
-                        type: "get",
-                        // data: {id: id, status:status},
-                        success: function(res){
-                          window.location.replace("paypal/success.php")
-                        }
-                    })
-                })
-              },
-              onCancel: function(data){
-                window.location.replace("paypal/onCancel.php")
-              }
-
-            }).render("#paypal-button");
-          </script>
+        <div class="button">
+          <input type="submit" name="pickup" class="btn" value="Submit" style = "background-color: #008374; color: #fff">
+        </div>
       </form>
     </div>
 
+ 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
@@ -174,8 +131,24 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    </body>
-    </html>
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+
+  </body>
+</html>
 
 

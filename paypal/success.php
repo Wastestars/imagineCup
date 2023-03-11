@@ -61,7 +61,7 @@
 				<h6>Hurray! Your payment of <span>1.00 USD</span> has been made successfully</h6>
 				<div class = "text-center">
 					<a href = "history.php"><button class = "btn home">View my Transactions</button></a>
-					<a href = "payments.php"><button class = "btn pay">Make another payment</button></a>
+					<a href = "../index.html"><button class = "btn pay">Go to home</button></a>
 				</div>
 			</div>
 		</body>

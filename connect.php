@@ -2,7 +2,7 @@
 define("db_server", "localhost");
 define("db_user", "root");
 define("db_password", "");
-define("db_database", "wastestars");
+define("db_database", "allwaste");
 
 $conn = mysqli_connect(db_server, db_user, db_password, db_database);
 //

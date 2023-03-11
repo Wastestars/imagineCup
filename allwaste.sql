@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2023 at 12:00 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.0
+-- Generation Time: Mar 11, 2023 at 12:49 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,16 +36,36 @@ CREATE TABLE `payments` (
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp(),
   `paid_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payments`
 --
 
 INSERT INTO `payments` (`id`, `status`, `payment_name`, `amount`, `currency`, `created_at`, `updated_at`, `paid_by`) VALUES
-(1, 'Approved', 'garbage collection fee', 1.00, 'USD', '2023-01-20 13:22:09', '2023-01-20 13:22:09', 1),
-(2, 'Approved', 'garbage collection fee', 1.00, 'USD', '2023-01-20 13:40:02', '2023-01-20 13:40:02', 1),
-(3, 'Approved', 'garbage collection fee', 1.00, 'USD', '2023-01-20 13:42:09', '2023-01-20 13:42:09', 1);
+(1, 'Approved', 'garbage collection fee', 1.00, 'USD', '2023-03-11 14:21:01', '2023-03-11 14:21:01', 1),
+(2, 'Approved', 'garbage collection fee', 1.00, 'USD', '2023-03-11 14:21:30', '2023-03-11 14:21:30', 1),
+(3, 'Approved', 'garbage collection fee', 1.00, 'USD', '2023-03-11 14:48:04', '2023-03-11 14:48:04', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pickup`
+--
+
+CREATE TABLE `pickup` (
+  `id` int(11) NOT NULL,
+  `pickupLocation` varchar(300) NOT NULL,
+  `pickupDateTime` datetime NOT NULL DEFAULT current_timestamp(),
+  `userID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pickup`
+--
+
+INSERT INTO `pickup` (`id`, `pickupLocation`, `pickupDateTime`, `userID`) VALUES
+(1, 'Nairobi', '2023-04-06 14:08:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -60,7 +80,7 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(300) NOT NULL,
   `phone_number` int(13) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -81,6 +101,13 @@ ALTER TABLE `payments`
   ADD KEY `fk_user_id` (`paid_by`);
 
 --
+-- Indexes for table `pickup`
+--
+ALTER TABLE `pickup`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userID` (`userID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -97,6 +124,12 @@ ALTER TABLE `payments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `pickup`
+--
+ALTER TABLE `pickup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -111,6 +144,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `payments`
   ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`paid_by`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `pickup`
+--
+ALTER TABLE `pickup`
+  ADD CONSTRAINT `pickup_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

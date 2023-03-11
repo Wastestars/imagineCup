@@ -1,18 +1,16 @@
 <?php
-require_once("connect.php");
+require_once('DBController.php');
 
-if (isset($_POST["pickup"])) {
+$date = date('Y-m-d H:i:s', strtotime($_POST['pickupDateTime']));
+$id = $_SESSION['id'] ?? null;
 
-    $date = date('Y-m-d H:i:s', strtotime($_POST['pickupDateTime']));
+$sql_insert = "INSERT INTO pickup(pickupLocation, pickupDateTime, userID) VALUES ('".$_POST['pickupLocation']."','$date', $id)";
 
-    $sql_insert = "INSERT INTO pickup(pickupLocation, pickupDateTime) VALUES ('".$_POST['pickupLocation']."','$date')";
-
-    if($conn->query($sql_insert)===TRUE){
-        echo "Sucessfully inserted!";
-        header(location:"http://localhost/viewPickupTimes.php");
-    }else {
-        "Error in inserting data".$conn->error;
-    }
+if(setData($sql_insert)){
+    echo "Sucessfully inserted!";
+    header("location: paypal/payments.php");
+}else {
+    "Error in inserting data".$conn->error;
 }
 
 ?>

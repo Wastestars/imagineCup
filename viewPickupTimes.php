@@ -104,10 +104,10 @@ button:hover{
   </a>
   <nav id="navbar" class="navbar">
     <ul>
-    <li><a href="../index.html">Home</a></li>
-      <li><a href="#">All Payments</a></li>
-	  <li><a href="../viewPickupTimes.php">Pickup Times</a></li>
-      <li><a href="../login.php">Login</a></li>
+    <li><a href="index.html">Home</a></li>
+      <li><a href="paypal/viewAllPayments.php">All Payments</a></li>
+	  <li><a href="#">Pickup Times</a></li>
+      <li><a href="login.php">Login</a></li>
     </ul>
   </nav><!-- .navbar -->
 

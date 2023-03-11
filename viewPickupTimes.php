@@ -4,6 +4,16 @@
     $db = mysqli_connect("localhost","root","","allwaste");
     $result = mysqli_query($db, $sql);
 
+    function getName($id, $db){
+      $sql_name = "SELECT * FROM users WHERE id = $id";
+      $result_sql = mysqli_query($db, $sql_name);
+
+      while($row_sql = mysqli_fetch_assoc($result_sql)) {
+        $name = $row_sql['first_name'].' '.$row['last_name'];
+      }
+      return $name;
+    }
+
     //$number_of_results = mysqli_num_rows($result);
     //     // determine number of total pages available
     //     $number_of_pages = ceil($number_of_results/$results_per_page);
@@ -83,14 +93,16 @@ button:hover{
   <tr>
     <th>Pickup Location</th>
     <th>Pickup Date and Time</th>
-
+    <th>Client</th>
   </tr>
   <?php
   while($row = mysqli_fetch_assoc($result)) {
-      echo "<tr>";
-      echo "<td>" . $row['pickupLocation'] . "</td>";
-      echo "<td>" . $row['pickupDateTime'] . "</td>";
-      ?>
+
+    echo "<tr>";
+    echo "<td>" . $row['pickupLocation'] . "</td>";
+    echo "<td>" . $row['pickupDateTime'] . "</td>";
+    echo "<td>" . getName($row['userID'], $db). "</td>";
+    ?>
 
     <?php
     echo "</td>";
